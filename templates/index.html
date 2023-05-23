@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cardknox Payment API Demo</title>
+<link rel="stylesheet" href="/static/css/styles.css">
+<script src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifields.min.js"></script>
+<script src="/static/js/main.js"></script>
+</head>
+<body>
+
+<h1>Payment API Demo</h1>
+
+<!-- <form action="/payment" method="post">
+  <input type="text" name="amount" placeholder="Amount">
+  <input type="submit" value="Pay">
+</form> -->
+
+<form id="payment-form" method="POST">
+  <input id="name" name="xName" placeholder="Name" autocomplete="cc-name"></input>
+  <br />
+  <iframe data-ifields-id="ach" data-ifields-placeholder="Checking Account Number" src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifield.htm"></iframe>
+  <input data-ifields-id="ach-token" name="xACH" type="hidden"></input>
+  <br />
+  <iframe data-ifields-id="card-number" data-ifields-placeholder="Card Number" src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifield.htm"></iframe>
+  <input data-ifields-id="card-number-token" name="xCardNum" type="hidden"></input>
+  <br />
+  <iframe data-ifields-id="cvv" data-ifields-placeholder="CVV" src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifield.htm"></iframe>
+  <input data-ifields-id="cvv-token" name="xCVV" type="hidden"></input>
+  <br />
+  <input id="amount" name="xAmount" placeholder="Amount"></input>
+  <br />
+  <input id="month" name="xMonth" placeholder="Month" autocomplete="cc-exp-month"></input>
+  <br />
+  <input id="year" name="xYear" placeholder="Year" autocomplete="cc-exp-year"></input>
+  <br />
+  <input id="submit-btn" type="submit" value="Submit"></input>
+  <br />
+  <input id="clear-btn" type="button" value="Clear"></input>
+  <br />
+  <label id="transaction-status"></label>
+  <br />
+  <label data-ifields-id="card-data-error"></label>
+  <br />
+  <div class="results">
+    <label>ACH Token: </label><label id="ach-token"></label>
+    <br />
+    <label>Card Token: </label><label id="card-token"></label>
+    <br />
+    <label>CVV Token: </label><label id="cvv-token"></label>
+  </div>
+  <br />
+  <br />
+</form>
+
+</body>
+</html>
